@@ -4,10 +4,9 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello there! It is my first app!</Text>
-      <Button
+      <Text style={styles.textFirst}>Hello there! It is my first app!</Text>
+      <Button style={styles.btn}
         title="Click Me"
-        color="#f194ff"
         onPress={() => console.log('Button pressed!')}
       />
       <StatusBar style="auto" />
@@ -22,4 +21,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  btn: {
+    fontSize: 10,
+    color: 'blue',
+    backgroundColor: 'green',
+
+  },
+  textFirst: {
+    fontSize: 20,
+    marginBottom: 30,
+    backgroundColor: 'green'
+
+  }
 });

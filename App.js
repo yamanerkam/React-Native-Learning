@@ -5,7 +5,9 @@ import React, { useState } from 'react';
 export default function App() {
   const [textBackgroundColor, setTextBackgroundColor] = useState('pink')
   const changeColor = () => {
-    setTextBackgroundColor('black')
+    if (textBackgroundColor == 'pink') setTextBackgroundColor('purple')
+    else setTextBackgroundColor('pink')
+
   }
   return (
     <View style={styles.container}>

@@ -1,13 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 
 export default function App() {
+  const [textBackgroundColor, setTextBackgroundColor] = useState('pink')
+  const changeColor = () => {
+    setTextBackgroundColor('black')
+  }
   return (
     <View style={styles.container}>
-      <Text style={styles.textFirst}>Hello there! It is my first app!</Text>
+
+      <Text style={[styles.textFirst, { backgroundColor: textBackgroundColor }]}>
+        Hello there! It is my first app!
+      </Text>
+
       <Button style={styles.btn}
         title="Click Me"
-        onPress={() => console.log('Button pressed!')}
+        onPress={() => changeColor()}
       />
       <StatusBar style="auto" />
     </View>

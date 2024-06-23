@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 export default function App() {
   const [textBackgroundColor, setTextBackgroundColor] = useState('pink')
+  const [name, setName] = useState('Kam')
   const changeColor = () => {
     if (textBackgroundColor == 'pink') setTextBackgroundColor('purple')
     else setTextBackgroundColor('pink')
@@ -11,19 +12,7 @@ export default function App() {
   }
   return (
     <><View style={styles.container}>
-      <View style={styles.firstView}>
-        <Text style={styles.txt}>
-          Hi!
-          <Text>inheritance</Text>
-        </Text>
-        <Text>
-          Hi!
-        </Text><Text>
-          Hi!
-        </Text><Text>
-          Hi!
-        </Text>
-      </View>
+
       <Text style={[styles.textFirst, { backgroundColor: textBackgroundColor }]}>
         Hello there! It is my first app!
       </Text>
@@ -32,8 +21,29 @@ export default function App() {
         title="Click Me"
         onPress={() => changeColor()}
       />
+
+      <View style={styles.name}>
+        <Text>
+          {name}
+        </Text>
+
+        <Button
+          onPress={() => setName('Ksenia')}
+          title='change name'
+        />
+      </View>
+
+
+
+
+
       <StatusBar style="auto" />
+
+
+
     </View>
+
+
 
 
     </>
@@ -50,23 +60,9 @@ const styles = StyleSheet.create({
   },
   btn: {
     fontSize: 10,
-    color: 'blue',
-    backgroundColor: 'green',
+    color: 'green',
 
-  },
-  textFirst: {
-    fontSize: 20,
-    marginBottom: 30,
-    backgroundColor: 'green'
-
-  }, firstView: {
-
-    backgroundColor: 'green',
-    padding: 20,
-  }, txt: {
-    fontWeight: 'bold',
-    color: 'white',
-    fontSize: 23,
-    margin: 20
+  }, name: {
+    alignItems: 'center',
   }
 });

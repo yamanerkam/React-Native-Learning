@@ -6,6 +6,8 @@ export default function App() {
   const [textBackgroundColor, setTextBackgroundColor] = useState('pink')
   const [name, setName] = useState('Kam')
   const [nameInput, setNameInput] = useState('')
+  const [age, setAge] = useState('')
+
 
   const changeColor = () => {
     if (textBackgroundColor == 'pink') setTextBackgroundColor('purple')
@@ -26,12 +28,21 @@ export default function App() {
 
       <View style={styles.name}>
         <View style={styles.inputArea}>
-          <Text>new name is {nameInput}</Text>
+          <Text>new name is {nameInput} and  i am {age} years old</Text>
           <TextInput
+
+            multiline
             style={styles.input}
             value={nameInput}
             placeholder='new name'
             onChangeText={setNameInput}
+          />
+          <TextInput
+            keyboardType='numeric'
+            style={styles.input}
+            value={age}
+            placeholder='age'
+            onChangeText={setAge}
           />
           <Button
             title='update the name'
